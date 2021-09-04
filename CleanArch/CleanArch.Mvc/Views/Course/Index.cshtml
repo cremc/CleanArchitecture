@@ -1,0 +1,20 @@
+﻿@model CleanArch.Application.ViewModels.CourseViewModel
+
+
+
+    <div class="container body-content">
+        <div class="row course-content">
+            @foreach (var course in Model.Courses)
+            {
+                <div class="course-image-container">
+                    <div class="course-image" style="background-image: url(@course.ImageUrl)"></div>
+                </div>
+
+                <span>
+                    @course.CourseName
+                </span>
+                <div><span><b>Is it for you?</b></span>  @course.CourseDescriptionForCareer</div>
+                <div><span><b>How tough is this course?</b></span>  @course.CourseDescriptionForRigour</div>
+            }
+        </div>
+    </div>

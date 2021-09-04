@@ -37,6 +37,8 @@ namespace CleanArch.Mvc
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            
+
             services.AddDbContext<QuedDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("QuedDBConnection"));
