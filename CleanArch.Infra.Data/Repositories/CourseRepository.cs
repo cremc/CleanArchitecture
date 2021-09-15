@@ -29,5 +29,11 @@ namespace CleanArch.Infra.Data.Repositories
 
             return _context.Courses;
         }
+
+        public void AddNew(Course course)
+        {
+            _context.Add(course);
+            _context.SaveChanges();
+        }
     }
 }
