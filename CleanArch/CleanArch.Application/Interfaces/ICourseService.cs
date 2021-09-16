@@ -11,5 +11,7 @@ namespace CleanArch.Application.Services
     {
         CourseViewModel GetCourses();
 
+        void Create(CourseViewModel courseViewModel);
+
     }
 }
