@@ -1,7 +1,9 @@
+using CleanArch.Infra.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -32,6 +34,13 @@ namespace CleanArch.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArch.Api", Version = "v1" });
             });
+
+            services.AddDbContext<Infra.Data.Context.QuedDBContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("QuedDBConnection"));
+            });
+
+            RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,5 +64,13 @@ namespace CleanArch.Api
                 endpoints.MapControllers();
             });
         }
+
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
+        }
+
+
     }
 }
