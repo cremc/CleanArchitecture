@@ -14,7 +14,7 @@ namespace CleanArch.Application.ViewModels
         //public string Description { get; protected set; }
         public int InstitutionId { get; set; }
         public int CASL1SubinstitutionId { get; set; }
-        public int? CASL2SubinstitutionId { get; set; }
+        public int CASL2SubinstitutionId { get; set; }
         public int? CASL3SubinstitutionId { get; set; }
         public int? CASL4SubinstitutionId { get; set; }
         public string CourseName { get; set; }

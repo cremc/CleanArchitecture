@@ -14,7 +14,7 @@ namespace CleanArch.Domain.Commands
         //public string Description { get; protected set; }
         public int InstitutionId { get; protected set; }
         public int CASL1SubinstitutionId { get; protected set; }
-        public int? CASL2SubinstitutionId { get; protected set; }
+        public int CASL2SubinstitutionId { get; protected set; }
         public int? CASL3SubinstitutionId { get; protected set; }
         public int? CASL4SubinstitutionId { get; protected set; }
         public string CourseName { get; protected set; }

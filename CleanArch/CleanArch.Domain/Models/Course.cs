@@ -18,7 +18,7 @@ namespace CleanArch.Domain.Models
         [Column("CASL1SubinstitutionID")]
         public int Casl1subinstitutionId { get; set; }
         [Column("CASL2SubinstitutionID")]
-        public int? Casl2subinstitutionId { get; set; }
+        public int Casl2subinstitutionId { get; set; }
         [Column("CASL3SubinstitutionID")]
         public int? Casl3subinstitutionId { get; set; }
         [Column("CASL4SubinstitutionID")]

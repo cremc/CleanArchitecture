@@ -11,13 +11,15 @@ namespace CleanArch.Domain.Commands
         public CreateCourseCommand(
             int institutionId, 
             int cASL1SubinstitutionId,
+            int cASL2SubinstitutionId,
             string courseName,
             int courseDurationAcademicSessions)
         {
-            institutionId = InstitutionId;
-            cASL1SubinstitutionId = CASL1SubinstitutionId;
-            courseName = CourseName;
-            courseDurationAcademicSessions = CourseDurationAcademicSessions;
+            InstitutionId = institutionId;
+            CASL1SubinstitutionId = cASL1SubinstitutionId;
+            CASL2SubinstitutionId = cASL2SubinstitutionId;
+            CourseName = courseName;
+            CourseDurationAcademicSessions = courseDurationAcademicSessions;
 
         }
     }

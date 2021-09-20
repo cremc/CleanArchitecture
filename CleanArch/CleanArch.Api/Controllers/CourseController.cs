@@ -14,11 +14,12 @@ namespace CleanArch.Api.Controllers
     public class CourseController : ControllerBase
     {
 
-        private ICourseService _courseService;
+        private readonly ICourseService _courseService;
         private readonly ILogger<CourseController> _logger;
 
-        public CourseController(ILogger<CourseController> logger)
+        public CourseController(ICourseService courseService, ILogger<CourseController> logger)
         {
+            _courseService = courseService;
             _logger = logger;
         }
 
@@ -27,6 +28,14 @@ namespace CleanArch.Api.Controllers
         {
             CourseViewModel courseViewModel = _courseService.GetCourses();
             return courseViewModel;
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] CourseViewModel courseViewModel)
+        {
+            _courseService.Create(courseViewModel);
+
+            return Ok(courseViewModel);
         }
     }
 }

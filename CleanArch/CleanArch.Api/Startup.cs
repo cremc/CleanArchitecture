@@ -1,4 +1,5 @@
 using CleanArch.Infra.IoC;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -40,6 +41,7 @@ namespace CleanArch.Api
                 options.UseSqlServer(Configuration.GetConnectionString("QuedDBConnection"));
             });
 
+            services.AddMediatR(typeof(Startup));
             RegisterServices(services);
         }
 

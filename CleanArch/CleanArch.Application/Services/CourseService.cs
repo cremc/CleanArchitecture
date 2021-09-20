@@ -26,6 +26,7 @@ namespace CleanArch.Application.Services
             var createCourseCommand = new CreateCourseCommand(
                 courseViewModel.InstitutionId,
                 courseViewModel.CASL1SubinstitutionId,
+                courseViewModel.CASL2SubinstitutionId,
                 courseViewModel.CourseName,
                 courseViewModel.CourseDurationAcademicSessions
                 );
