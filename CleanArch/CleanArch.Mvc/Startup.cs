@@ -32,7 +32,7 @@ namespace CleanArch.Mvc
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("QuedIdentityDBConnection")));
+                    Configuration.GetConnectionString("QuedIdentityDBConnection")));   //Old server name: DESKTOP-IAHM2NI
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
